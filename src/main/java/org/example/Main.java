@@ -1,6 +1,6 @@
 package org.example;
 
-public class Main2 {
+public class Main {
     public static void main(String[] args) {
         // Создаем массив из 5 товаров
         int i1 = 5;
