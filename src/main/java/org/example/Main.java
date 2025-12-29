@@ -150,7 +150,7 @@ class StudentManager {
 }
 
 // Пример использования
-public class Main5 {
+public class Main {
     public static void main(String[] args) {
         // Создаем коллекцию студентов
         Set<Student> students = new HashSet<>();
