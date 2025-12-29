@@ -14,11 +14,11 @@ class Animal {
     }
 
     public void run(int distance) {
-        System.out.println(getName() + " бежит " + distance + " м.");
+        System.out.println(getName() + "  бежит " + distance + " м.");
     }
 
     public void swim(int distance) {
-        System.out.println(getName() + " плывет " + distance + " м.");
+        System.out.println(getName() + "  плывет " + distance + " м.");
     }
 
     public String getName() {
@@ -45,7 +45,7 @@ class Dog extends Animal {
         if (distance <= MAX_RUN_DISTANCE) {
             super.run(distance);
         } else {
-            System.out.println(getName() + " не может пробежать " + distance + " м. Максимум: " + MAX_RUN_DISTANCE + " м.");
+            System.out.println(getName() + "  не может пробежать " + distance + " м. Максимум: " + MAX_RUN_DISTANCE + " м.");
         }
     }
 
@@ -79,7 +79,7 @@ class Cat extends Animal {
         if (distance <= MAX_RUN_DISTANCE) {
             super.run(distance);
         } else {
-            System.out.println(getName() + " не может пробежать " + distance + " м. Максимум: " + MAX_RUN_DISTANCE + " м.");
+            System.out.println(getName() + "  не может пробежать " + distance + " м. Максимум: " + MAX_RUN_DISTANCE + " м.");
         }
     }
 
@@ -133,7 +133,7 @@ class Bowl {
     public void addFood(int amount) {
         if (amount > 0) {
             foodAmount += amount;
-            System.out.println("В миску добавлено " + amount + " еды. Теперь в миске: " + foodAmount + " еды.");
+            System.out.println("В  миску добавлено " + amount + " еды. Теперь в миске: " + foodAmount + " еды.");
         }
     }
 

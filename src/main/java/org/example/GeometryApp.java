@@ -19,7 +19,7 @@ interface GeometricFigure {
     // Вспомогательный метод для преобразования цвета в строку
     private String colorToString(Color color) {
         if (color == Color.RED) return "Красный";
-        if (color == Color.GREEN) return "Зеленый";
+        if (color == Color.GREEN) return " Зеленый";
         if (color == Color.BLUE) return "Синий";
         if (color == Color.YELLOW) return "Желтый";
         if (color == Color.BLACK) return "Черный";
@@ -124,7 +124,7 @@ class Triangle implements GeometricFigure {
             this.fillColor = fillColor;
             this.borderColor = borderColor;
         } else {
-            throw new IllegalArgumentException("Треугольник с такими сторонами не существует");
+            throw new IllegalArgumentException("Треугольник с такими   сторонами не существует");
         }
     }
 
@@ -181,7 +181,7 @@ public class GeometryApp {
         System.out.println("Круг:");
         circle.printInfo();
 
-        System.out.println("\nПрямоугольник:");
+        System.out.println("\n Прямоугольник:");
         rectangle.printInfo();
 
         System.out.println("\nТреугольник:");

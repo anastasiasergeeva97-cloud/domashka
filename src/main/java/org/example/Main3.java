@@ -5,11 +5,11 @@ public class Main3 {
         System.out.println("=== Часть 1: Животные ===");
 
         // Создаем животных
-        Dog dog1 = new Dog("Бобик");
-        Dog dog2 = new Dog("Шарик");
-        Cat cat1 = new Cat("Мурзик");
-        Cat cat2 = new Cat("Барсик");
-        Cat cat3 = new Cat("Васька");
+        Dog dog1 = new Dog(" Бобик");
+        Dog dog2 = new Dog(" Шарик");
+        Cat cat1 = new Cat(" Мурзик");
+        Cat cat2 = new Cat(" Барсик");
+        Cat cat3 = new Cat(" Васька");
 
         // Тестируем бег и плавание
         dog1.run(400);
@@ -21,7 +21,7 @@ public class Main3 {
         cat1.run(250);
         cat1.swim(10);
 
-        System.out.println("\n=== Часть 2: Коты и миска ===");
+        System.out.println("\n=== Часть  2: Коты и миска ===");
 
         // Создаем миску и массив котов
         Bowl bowl = new Bowl(20);
