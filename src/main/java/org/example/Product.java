@@ -1,6 +1,6 @@
 package org.example;
 
-public class Product2 {
+public class Product {
     //Поля класса
     private String
             name ;
@@ -21,7 +21,7 @@ public class Product2 {
     //состояние бронирования покупателем
 
     //Конструктор
-    public Product2(String name, String productionData, String manufacturer, String country, double price, boolean isReserved) {
+    public Product(String name, String productionData, String manufacturer, String country, double price, boolean isReserved) {
         this.name=name ;
         //название
         this.manufacturer=manufacturer;
