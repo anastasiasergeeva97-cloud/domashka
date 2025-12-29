@@ -1,6 +1,6 @@
 package org.example;
 
-public class Park2 {
+public class Park {
     private String parkName;
     private Attraction[] attractions;  // массив аттракционов
 
