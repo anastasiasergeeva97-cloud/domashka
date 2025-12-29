@@ -7,19 +7,19 @@ public class Main {
         Product2[] productsArray = new Product2 [5];
 
         // Заполняем массив объектами
-        productsArray[0] = new Product2("Samsung S25 Ultra", "01.02.2025",
+        productsArray[0] = new Product("Samsung S25 Ultra", "01.02.2025",
                 "Samsung Corp.", "Korea", 5599, true);
 
-        productsArray[1] = new Product2("iPhone 16 Pro", "15.01.2025",
+        productsArray[1] = new Product("iPhone 16 Pro", "15.01.2025",
                 "Apple Inc.", "USA", 6499, false);
 
-        productsArray[2] = new Product2("Xiaomi 14", "10.03.2025",
+        productsArray[2] = new Product("Xiaomi 14", "10.03.2025",
                 "Xiaomi Corporation", "China", 3999, true);
 
-        productsArray[3] = new Product2("Nokia G42", "20.02.2025",
+        productsArray[3] = new Product("Nokia G42", "20.02.2025",
                 "HMD Global", "Finland", 1299, false);
 
-        productsArray[4] = new Product2("Google Pixel 8", "05.01.2025",
+        productsArray[4] = new Product("Google Pixel 8", "05.01.2025",
                 "Google LLC", "USA", 4599, true);
 
         // Выводим информацию о всех товарах
@@ -41,7 +41,7 @@ public class Main {
         System.out.println("=".repeat(50));
 
         // Создаем парк
-        Park2 disneyland = new Park2("Диснейленд", 3);
+        Park2 disneyland = new Park("Диснейленд", 3);
         System.out.println("Создан парк: " + disneyland.getParkName());
 
         // Добавляем аттракционы
@@ -54,7 +54,7 @@ public class Main {
 
         // Демонстрация внутреннего класса
         System.out.println("\nДемонстрация создания объекта внутреннего класса:");
-        Park2.Attraction newAttraction = disneyland.new Attraction("Водные горки", "11:00-19:00", 1700);
+        Park.Attraction newAttraction = disneyland.new Attraction("Водные горки", "11:00-19:00", 1700);
         newAttraction.displayInfo();
     }
 }
