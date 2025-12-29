@@ -5,7 +5,7 @@ public class Park {
     private Attraction[] attractions;  // массив аттракционов
 
     // Конструктор парка
-    public Park2(String parkName, int capacity) {
+    public Park(String parkName, int capacity) {
         this.parkName = parkName;
         this.attractions = new Attraction[capacity];
     }
