@@ -1,6 +1,6 @@
 package org.example;
 // Основной класс для тестирования
-public class Main3 {
+public class Main {
     public static void main(String[] args) {
         System.out.println("=== Часть 1: Животные ===");
 
