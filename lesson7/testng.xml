@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lesson 7 Test Suite" verbose="1">
+    <test name="All Tests">
+        <packages>
+            <package name="com.lesson7.*" />
+        </packages>
+    </test>
+
+    <test name="Positive Tests">
+        <groups>
+            <run>
+                <include name="positive" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.lesson7.FactorialCalculatorTestNG" />
+        </classes>
+    </test>
+</suite>
