@@ -50,7 +50,7 @@ public class ArrayProcessor {
     public static int processArray(String[][] array)
             throws MyArraySizeException, MyArrayDataException {
 
-        System.out.println("\n=== Начинаем обработку массива ===");
+        System.out.println("\n=== обработка массива ===");
 
         // ----- ПРОВЕРКА РАЗМЕРА МАССИВА -----
         // 1. Проверяем количество строк
@@ -101,7 +101,7 @@ public class ArrayProcessor {
             }
         }
 
-        System.out.println("✓ Все ячейки обработаны успешно!");
+        System.out.println(" Все ячейки обработаны успешно!");
         return sum;
     }
 
