@@ -1,7 +1,7 @@
 package org.example;
 import java.util.*;
 
-// Простой класс Телефонный Справочник
+// Телефонный Справочник
 class PhoneDirectory {
     private Map<String, List<String>> directory;
 
@@ -49,7 +49,7 @@ class PhoneDirectory {
     }
 }
 
-// Пример использования телефонного справочника
+// исп. телефонного справочника
 public class PhoneDirectoryExample {
     public static void main(String[] args) {
         PhoneDirectory directory = new PhoneDirectory();
