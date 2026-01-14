@@ -1,6 +1,8 @@
 package postman;
 
 import org.junit.jupiter.api.Test;
+import postman.BaseTest;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 

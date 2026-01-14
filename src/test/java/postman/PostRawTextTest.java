@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class PostRawTextTest extends BaseTest {
-
+//тест
     @Test
     void postRawText_shouldReturnSameBody() {
         String body = "This is expected to be sent back as part of response body.";

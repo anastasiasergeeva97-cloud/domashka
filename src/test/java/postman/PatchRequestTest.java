@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class PatchRequestTest extends BaseTest {
-
+//тест
     @Test
     void patchRequest_shouldReturnSameBody() {
         String body = "This is expected to be sent back as part of response body.";

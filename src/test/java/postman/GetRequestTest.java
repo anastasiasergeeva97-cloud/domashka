@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class GetRequestTest extends BaseTest {
-
+//тест
     @Test
     void getRequest_shouldReturnQueryParams() {
 
