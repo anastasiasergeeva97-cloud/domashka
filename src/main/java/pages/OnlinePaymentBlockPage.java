@@ -68,7 +68,7 @@ public class OnlinePaymentBlockPage {
                 .isDisplayed();
     }
 
-    /* =================== PAYMENT FLOW =================== */
+    /* =================== PAYMENT FLOW ================== */
     public void fillPhoneAndClickContinue() {
         // 1. Раскрываем список
         WebElement tab = wait.until(ExpectedConditions.presenceOfElementLocated(servicesTab));

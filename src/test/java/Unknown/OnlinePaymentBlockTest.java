@@ -25,22 +25,22 @@ public class OnlinePaymentBlockTest {
     void tearDown() {
         driver.quit();
     }
-
+//тест 1
     @Test
     void checkBlockTitle() {
         assertEquals("Онлайн пополнение без комиссии", page.getBlockTitleText());
     }
-
+//тест 2
     @Test
     void checkPaymentLogos() {
         assertTrue(page.arePaymentLogosDisplayed());
     }
-
+//тест 3
     @Test
     void checkMoreInfoLink() {
         assertTrue(page.isMoreInfoLinkDisplayed());
     }
-
+//тест 4
     @Test
     void checkContinueButtonOpensPayment() {
         page.fillPhoneAndClickContinue();
