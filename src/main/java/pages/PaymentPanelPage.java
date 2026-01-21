@@ -12,7 +12,7 @@ public class PaymentPanelPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    /* локаторы внутри iframe */
+    /* локаторы  */
     private final By iframe = By.cssSelector("iframe[allowpaymentrequest]");
     private final By amount = By.xpath("//span[contains(.,'30.00 BYN')]");
     private final By description = By.xpath("//span[contains(.,'Оплата:')]");

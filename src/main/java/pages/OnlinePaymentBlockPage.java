@@ -9,16 +9,14 @@ public class OnlinePaymentBlockPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    /* ---------- блок оплаты ---------- */
+
     private final By paymentBlock   = By.id("pay-section");
     private final By blockTitle     = By.xpath("//*[@id='pay-section']/div/div/div[2]/section/div/h2");
     private final By paymentLogos   = By.xpath("//*[@id='pay-section']/div/div/div[2]/section/div/div[2]//img");
     private final By moreInfoLink   = By.xpath("//*[@id='pay-section']/div/div/div[2]/section/div/a");
 
-    /* ---------- выпадающий список (select) ---------- */
-    private final By serviceSelect = By.xpath("//*[@id='pay-section']//select");
 
-    /* ---------- поля (точные id) ---------- */
+    private final By serviceSelect = By.xpath("//*[@id='pay-section']//select");
     private final By phoneInput     = By.id("connection-phone");
     private final By sumInput       = By.id("connection-sum");
     private final By continueBtn    = By.xpath("//*[@id='pay-section']//button[contains(.,'Продолжить')]");
@@ -51,7 +49,6 @@ public class OnlinePaymentBlockPage {
                 .executeScript("return arguments[0].offsetHeight > 0", block));
     }
 
-    /* ---------- базовый контент ---------- */
     public String getBlockTitleText() {
         return wait.until(ExpectedConditions.presenceOfElementLocated(blockTitle))
                 .getText().replaceAll("\\s+", " ").trim();
@@ -65,13 +62,12 @@ public class OnlinePaymentBlockPage {
         return wait.until(ExpectedConditions.presenceOfElementLocated(moreInfoLink)).isDisplayed();
     }
 
-    /* ---------- выбор варианта из dropdown ---------- */
+
     public void selectService(String visibleText) {
         WebElement select = wait.until(ExpectedConditions.presenceOfElementLocated(serviceSelect));
         new Select(select).selectByVisibleText(visibleText);
     }
 
-    /* ---------- плейсхолдеры ---------- */
     public String getPhonePlaceholder() {
         return wait.until(ExpectedConditions.presenceOfElementLocated(phoneInput))
                 .getDomProperty("placeholder");
@@ -81,8 +77,6 @@ public class OnlinePaymentBlockPage {
         return wait.until(ExpectedConditions.presenceOfElementLocated(sumInput))
                 .getDomProperty("placeholder");
     }
-
-    /* ---------- заполнение и переход в панель ---------- */
     public void fillServicesForm(String phone, String sum) {
         WebElement phoneEl = wait.until(ExpectedConditions.presenceOfElementLocated(phoneInput));
         WebElement sumEl   = wait.until(ExpectedConditions.presenceOfElementLocated(sumInput));
@@ -98,7 +92,6 @@ public class OnlinePaymentBlockPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn);
     }
 
-    /* === ОДНА СТРОЧКА ДЛЯ ТЕСТА === */
     public void fillTestPaymentForm() {
         selectService("Услуги связи");
         fillServicesForm("297777777", "30.00");

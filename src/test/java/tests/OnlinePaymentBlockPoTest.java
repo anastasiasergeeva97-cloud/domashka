@@ -34,7 +34,7 @@ public class OnlinePaymentBlockPoTest {
     void tearDown() {
         driver.quit();
     }
-
+//1
     @Test
     @Story("Базовый контент блока оплаты")
     @Severity(SeverityLevel.NORMAL)
@@ -44,7 +44,7 @@ public class OnlinePaymentBlockPoTest {
         assertTrue(mainPage.arePaymentLogosDisplayed(), "Логотипы не отображаются");
         assertTrue(mainPage.isMoreInfoLinkDisplayed(), "Ссылка 'Подробнее' не отображается");
     }
-
+    //2
     @Test
     @Story("Плейсхолдеры полей")
     @Severity(SeverityLevel.NORMAL)
@@ -57,7 +57,7 @@ public class OnlinePaymentBlockPoTest {
             assertEquals("Сумма", mainPage.getSumPlaceholder());
         }
     }
-
+//3
     @Test
     @Story("Проверка данных в модальном окне оплаты")
     @Severity(SeverityLevel.CRITICAL)
