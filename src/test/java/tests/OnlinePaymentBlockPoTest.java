@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +9,8 @@ import pages.PaymentPanelPage;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Epic("Онлайн-платежи")
+@Feature("Блок «Онлайн пополнение без комиссии»")
 public class OnlinePaymentBlockPoTest {
 
     private WebDriver driver;
@@ -15,6 +18,7 @@ public class OnlinePaymentBlockPoTest {
     private PaymentPanelPage panelPage;
 
     @BeforeEach
+    @Step("Открыть сайт mts.by и принять куки")
     void setUp() {
         driver = new ChromeDriver();
         mainPage  = new OnlinePaymentBlockPage(driver);
@@ -26,20 +30,25 @@ public class OnlinePaymentBlockPoTest {
     }
 
     @AfterEach
+    @Step("Закрыть браузер")
     void tearDown() {
         driver.quit();
     }
 
-    /* 1. базовый контент блока */
     @Test
+    @Story("Базовый контент блока оплаты")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Проверка заголовка, логотипов и ссылки 'Подробнее'")
     void checkBaseBlockContent() {
         assertEquals("Онлайн пополнение без комиссии", mainPage.getBlockTitleText());
-        assertTrue(mainPage.arePaymentLogosDisplayed());
-        assertTrue(mainPage.isMoreInfoLinkDisplayed());
+        assertTrue(mainPage.arePaymentLogosDisplayed(), "Логотипы не отображаются");
+        assertTrue(mainPage.isMoreInfoLinkDisplayed(), "Ссылка 'Подробнее' не отображается");
     }
 
-    /* 2. плейсхолдеры всех 4 вариантов оплаты (через dropdown) */
     @Test
+    @Story("Плейсхолдеры полей")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Проверка плейсхолдеров для всех 4 типов услуг")
     void checkPlaceholdersForAllServices() {
         String[] services = {"Услуги связи", "Домашний интернет", "Рассрочка", "Задолженность"};
         for (String service : services) {
@@ -49,12 +58,13 @@ public class OnlinePaymentBlockPoTest {
         }
     }
 
-    /* 3. заполнение «Услуги связи» → проверка данных в панели оплаты */
     @Test
+    @Story("Проверка данных в модальном окне оплаты")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("После ввода номера и суммы должны отображаться корректные значения в окне оплаты")
     void checkPaymentPanelContent() {
-        mainPage.fillTestPaymentForm();   // ввод 375297777777 и 30.00
-
-        panelPage.waitForDialogOpen();    // ждём НЕ mat-, а обычный div.modal
+        mainPage.fillTestPaymentForm();          // 375297777777 / 30.00
+        panelPage.waitForDialogOpen();
 
         String amount      = panelPage.getAmount();
         String description = panelPage.getDescription();
@@ -62,6 +72,6 @@ public class OnlinePaymentBlockPoTest {
         assertEquals("30.00 BYN", amount);
         assertTrue(description.contains("Оплата: Услуги связи") &&
                         description.contains("375297777777"),
-                "Описание не содержит 'Оплата: Услуги связи' и/или номер");
+                "Описание не содержит ожидаемых данных");
     }
 }
